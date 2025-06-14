@@ -29,7 +29,7 @@ detect_architecture() {
 # 安装 Mihomo 核心
 mihomo_install() {
     arch=$(detect_architecture)
-    download_url="https://github.com/herozmy/StoreHouse/releases/download/mihomo/mihomo-meta-linux-${arch}.tar.gz"
+    download_url="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/mihomo/mihomo-meta-linux-${arch}.tar.gz"
     log "开始下载 Mihomo 核心：$download_url"
 
     if ! wget -O /tmp/mihomo.tar.gz "$download_url"; then
@@ -62,13 +62,13 @@ mihomo_install
 log "准备更新 UI..."
 mkdir -p /mssb/mihomo/ui/
 rm -rf /tmp/ui
-if git clone --depth=1 https://github.com/Zephyruso/zashboard.git -b gh-pages /tmp/ui; then
+if git clone --depth=1 https://ghproxylist.com/https://github.com/Zephyruso/zashboard.git -b gh-pages /tmp/ui; then
     cp -r /tmp/ui/* /mssb/mihomo/ui/
     log "UI 文件克隆并复制成功。"
 else
     log "UI 文件克隆失败，请检查 GitHub URL 或网络连接。"
     echo "拉取源码失败，请手动下载源码并解压至 /mssb/${core_name}/ui"
-    echo "地址: https://github.com/Zephyruso/zashboard.git"
+    echo "地址: https://ghproxylist.com/https://github.com/Zephyruso/zashboard.git"
     exit 1
 fi
 

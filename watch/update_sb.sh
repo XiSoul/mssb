@@ -42,11 +42,11 @@ main() {
     # 根据核心类型选择下载地址
     case "$core_type" in
         "sing-box-reF1nd")
-            SING_BOX_URL="https://github.com/herozmy/StoreHouse/releases/download/sing-box-reF1nd/sing-box-reF1nd-dev-linux-${arch}.tar.gz"
+            SING_BOX_URL="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/sing-box-reF1nd/sing-box-reF1nd-dev-linux-${arch}.tar.gz"
             log "当前使用 reF1nd佬 R核心，准备更新..."
             ;;
         "sing-box-yelnoo")
-            SING_BOX_URL="https://github.com/herozmy/StoreHouse/releases/download/sing-box-yelnoo/sing-box-yelnoo-linux-${arch}.tar.gz"
+            SING_BOX_URL="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/sing-box-yelnoo/sing-box-yelnoo-linux-${arch}.tar.gz"
             log "当前使用 S佬Y核心，准备更新..."
             ;;
         *)
@@ -83,7 +83,7 @@ main() {
     log "准备更新 UI..."
     mkdir -p /mssb/sing-box/ui/
     rm -rf /tmp/ui
-    if git clone --depth=1 https://github.com/Zephyruso/zashboard.git -b gh-pages /tmp/ui; then
+    if git clone --depth=1 https://ghproxylist.com/https://github.com/Zephyruso/zashboard.git -b gh-pages /tmp/ui; then
         cp -r /tmp/ui/* /mssb/sing-box/ui/
         log "UI 文件克隆并复制成功。"
     else

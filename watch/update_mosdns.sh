@@ -27,7 +27,7 @@ detect_architecture() {
 #LATEST_VERSION=$(curl -sL -o /dev/null -w %{url_effective} $LATEST_RELEASE_URL | awk -F '/' '{print $NF}')
 #MOSDNS_URL="https://github.com/IrineSistiana/mosdns/releases/download/${LATEST_VERSION}/mosdns-linux-${TARGETARCH}.zip"
 arch=$(detect_architecture)
-MOSDNS_URL="https://github.com/herozmy/StoreHouse/releases/download/mosdns/mosdns-linux-${arch}.zip"
+MOSDNS_URL="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/mosdns/mosdns-linux-${arch}.zip"
 
 # 下载最新的 MosDNS
 echo "[$(date)] 正在从 $MOSDNS_URL 下载 MosDNS..."

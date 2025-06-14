@@ -227,9 +227,9 @@ install_mosdns() {
     log "开始下载 MosDNS..."
     arch=$(detect_architecture)
     log "系统架构是：$arch"
-#  LATEST_MOSDNS_VERSION=$(curl -sL -o /dev/null -w %{url_effective} https://github.com/IrineSistiana/mosdns/releases/latest | awk -F '/' '{print $NF}')
-#  MOSDNS_URL="https://github.com/IrineSistiana/mosdns/releases/download/${LATEST_MOSDNS_VERSION}/mosdns-linux-$arch.zip"
-    MOSDNS_URL="https://github.com/herozmy/StoreHouse/releases/download/mosdns/mosdns-linux-$arch.zip"
+#  LATEST_MOSDNS_VERSION=$(curl -sL -o /dev/null -w %{url_effective} https://ghproxylist.com/https://github.com/IrineSistiana/mosdns/releases/latest | awk -F '/' '{print $NF}')
+#  MOSDNS_URL="https://ghproxylist.com/https://github.com/IrineSistiana/mosdns/releases/download/${LATEST_MOSDNS_VERSION}/mosdns-linux-$arch.zip"
+    MOSDNS_URL="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/mosdns/mosdns-linux-$arch.zip"
 
     log "从 $MOSDNS_URL 下载 MosDNS..."
     if curl -L -o /tmp/mosdns.zip "$MOSDNS_URL"; then
@@ -299,8 +299,8 @@ install_filebrower() {
     log "开始下载 Filebrowser..."
     arch=$(detect_architecture)
     log "系统架构是：$arch"
-    LATEST_FILEBROWSER_VERSION=$(curl -sL -o /dev/null -w %{url_effective} https://github.com/filebrowser/filebrowser/releases/latest | awk -F '/' '{print $NF}')
-    FILEBROWSER_URL="https://github.com/filebrowser/filebrowser/releases/download/${LATEST_FILEBROWSER_VERSION}/linux-$arch-filebrowser.tar.gz"
+    LATEST_FILEBROWSER_VERSION=$(curl -sL -o /dev/null -w %{url_effective} https://ghproxylist.com/https://github.com/filebrowser/filebrowser/releases/latest | awk -F '/' '{print $NF}')
+    FILEBROWSER_URL="https://ghproxylist.com/https://github.com/filebrowser/filebrowser/releases/download/${LATEST_FILEBROWSER_VERSION}/linux-$arch-filebrowser.tar.gz"
 
     log "从 $FILEBROWSER_URL 下载 Filebrowser..."
     if curl -L --fail -o /tmp/filebrowser.tar.gz "$FILEBROWSER_URL"; then
@@ -732,7 +732,7 @@ install_mihomo() {
 
     # 下载并安装 Mihomo
     arch=$(detect_architecture)
-    download_url="https://github.com/herozmy/StoreHouse/releases/download/mihomo/mihomo-meta-linux-${arch}.tar.gz"
+    download_url="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/mihomo/mihomo-meta-linux-${arch}.tar.gz"
     log "开始下载 Mihomo 核心..."
 
     if ! wget -O /tmp/mihomo.tar.gz "$download_url"; then
@@ -848,7 +848,7 @@ git_ui(){
     echo "正在下载 UI 源码到临时目录..."
 
     # 先下载到临时目录
-    if git clone --depth=1 https://github.com/Zephyruso/zashboard.git -b gh-pages "$temp_ui_path"; then
+    if git clone --depth=1 https://ghproxylist.com/https://github.com/Zephyruso/zashboard.git -b gh-pages "$temp_ui_path"; then
         echo -e "UI 源码下载${green_text}成功${reset}，正在替换..."
 
         # 下载成功，删除现有UI（如果存在）
@@ -873,7 +873,7 @@ git_ui(){
     else
         echo -e "${red}UI 源码下载失败${reset}，保持现有 UI 不变"
         echo "请检查网络连接或手动下载源码并解压至 $ui_path"
-        echo "下载地址: https://github.com/Zephyruso/zashboard.git"
+        echo "下载地址: https://ghproxylist.com/https://github.com/Zephyruso/zashboard.git"
 
         # 清理可能存在的临时文件
         rm -rf "$temp_ui_path" 2>/dev/null
@@ -1591,7 +1591,7 @@ singbox_r_install() {
 
     # 下载并安装 reF1nd R核心
     arch=$(detect_architecture)
-    download_url="https://github.com/herozmy/StoreHouse/releases/download/sing-box-reF1nd/sing-box-reF1nd-dev-linux-${arch}.tar.gz"
+    download_url="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/sing-box-reF1nd/sing-box-reF1nd-dev-linux-${arch}.tar.gz"
 
     log "开始下载 reF1nd佬 R核心..."
     if ! wget -O sing-box.tar.gz "$download_url"; then
@@ -1649,7 +1649,7 @@ singbox_s_install() {
 
     # 下载并安装 S佬Y核心
     arch=$(detect_architecture)
-    download_url="https://github.com/herozmy/StoreHouse/releases/download/sing-box-yelnoo/sing-box-yelnoo-linux-${arch}.tar.gz"
+    download_url="https://ghproxylist.com/https://github.com/herozmy/StoreHouse/releases/download/sing-box-yelnoo/sing-box-yelnoo-linux-${arch}.tar.gz"
 
     log "开始下载 S佬Y核心..."
     if ! wget -O sing-box.tar.gz "$download_url"; then
@@ -1913,7 +1913,7 @@ format_route_rules() {
     echo -e "1. 主路由的 DNS 服务器必须设置为本机 IP：$local_ip"
     echo -e "2. 添加路由后，相关服务将自动通过本机代理"
     echo -e "${green_text}-------------------------------------------------${reset}"
-    echo -e "${green_text} routeros 具体可以参考: https://github.com/baozaodetudou/mssb/blob/main/docs/fakeip.md ${reset}"
+    echo -e "${green_text} routeros 具体可以参考: https://ghproxylist.com/https://github.com/baozaodetudou/mssb/blob/main/docs/fakeip.md ${reset}"
 }
 
 # 扫描局域网设备并配置代理设备列表
@@ -2115,7 +2115,7 @@ main() {
     set_timezone
 
     echo -e "${green_text}-------------------------------------------------${reset}"
-    log "请注意：本脚本支持 Debian/Ubuntu，安装前请确保系统未安装其他代理软件。参考：https://github.com/herozmy/StoreHouse/tree/latest"
+    log "请注意：本脚本支持 Debian/Ubuntu，安装前请确保系统未安装其他代理软件。参考：https://ghproxylist.com/https://github.com/herozmy/StoreHouse/tree/latest"
     echo -e "当前机器地址:${green_text}${local_ip}${reset}"
     echo -e "${green_text}-------------------------------------------------${reset}"
     echo -e "${green_text}备份所有重要文件到/mssb/backup ${reset}"
